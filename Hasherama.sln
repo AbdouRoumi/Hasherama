@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hasherama", "Hasherama\Hasherama.vcxproj", "{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Debug|x64.ActiveCfg = Debug|x64
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Debug|x64.Build.0 = Debug|x64
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Debug|x86.ActiveCfg = Debug|Win32
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Debug|x86.Build.0 = Debug|Win32
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Release|x64.ActiveCfg = Release|x64
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Release|x64.Build.0 = Release|x64
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Release|x86.ActiveCfg = Release|Win32
+		{727C2DAC-D1E6-4F3C-B3D1-E62C6ECB3706}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72571D00-01BF-4189-B73F-C8AED00F77A6}
+	EndGlobalSection
+EndGlobal
