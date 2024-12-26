@@ -174,7 +174,7 @@ INT HashStringUnknownGenericHash1W(_In_ LPCWSTR String)
 
 
 // generate JenkinsOneAtATime32Bit hashes from Ascii input string
-UINT32 HashStringJenkinsOneAtATime32BitA(_In_ PCHAR String)
+UINT32 HashStringJenkinsOneAtATime32BitA(_In_ LPCSTR String)
 {
 	SIZE_T Index = 0;
 	UINT32 Hash = 0;
@@ -195,7 +195,7 @@ UINT32 HashStringJenkinsOneAtATime32BitA(_In_ PCHAR String)
 }
 
 // generate JenkinsOneAtATime32Bit hashes from wide-character input string
-UINT32 HashStringJenkinsOneAtATime32BitW(_In_ PWCHAR String)
+UINT32 HashStringJenkinsOneAtATime32BitW(_In_ LPCWSTR String)
 {
 	SIZE_T Index = 0;
 	UINT32 Hash = 0;
@@ -216,21 +216,34 @@ UINT32 HashStringJenkinsOneAtATime32BitW(_In_ PWCHAR String)
 }
 
 
-
-
+	
 int main() {
+	// Use const for string literals
+	LPCSTR cTest = "E1B1gR0m4";
+	LPCWSTR wTest = L"ElB1gR0m4";
 
-	LPCSTR	cTest	= "ElB1gR0m4";
-	LPCWSTR	wTest	= L"ElB1gR0m4";
+	// Test all hash functions
+	printf("\n=== ASCII String Tests ===\n");
+	printf("Input: \"%s\"\n", cTest);
+	printf("Djb2:              0x%08X\n", HashStringDjb2A(cTest));
+	printf("FowlerNollVo:      0x%08X\n", HashStringFowlerNollVoVariant1aA(cTest));
+	printf("LoseLose:          0x%08X\n", HashStringLoseLoseA(cTest));
+	printf("Sdbm:              0x%08X\n", HashStringSdbmA(cTest));
+	printf("UnknownGeneric:    0x%08X\n", HashStringUnknownGenericHash1A(cTest));
+	printf("JenkinsOneAtATime: 0x%08X\n", HashStringJenkinsOneAtATime32BitA(cTest));
 
-	printf("[+] Hash Of \"%s\" Is : 0x%0.8X \n", cTest, HashStringJenkinsOneAtATime32BitA(cTest));
-	wprintf(L"[+] Hash Of \"%s\" Is : 0x%0.8X \n", wTest, HashStringJenkinsOneAtATime32BitW(wTest));
+	printf("\n=== Unicode String Tests ===\n");
+	wprintf(L"Input: \"%s\"\n", wTest);
+	printf("Djb2:              0x%08X\n", HashStringDjb2W(wTest));
+	printf("FowlerNollVo:      0x%08X\n", HashStringFowlerNollVoVariant1aW(wTest));
+	printf("LoseLose:          0x%08X\n", HashStringLoseLoseW(wTest));
+	printf("Sdbm:              0x%08X\n", HashStringSdbmW(wTest));
+	printf("UnknownGeneric:    0x%08X\n", HashStringUnknownGenericHash1W(wTest));
+	printf("JenkinsOneAtATime: 0x%08X\n", HashStringJenkinsOneAtATime32BitW(wTest));
 
-	printf("[#] Press <Enter> To Quit ... ");
+	printf("\nPress Enter to quit...");
 	getchar();
-
 	return 0;
 }
-
 
 
